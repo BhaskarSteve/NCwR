@@ -52,7 +52,7 @@ if device == 'cuda':
 
 # Load data
 name_data = args.dataset
-dataset = Planetoid(root= '../../data/', name = name_data)
+dataset = Planetoid(root= './data/', name = name_data)
 dataset.transform = T.NormalizeFeatures()
 data = dataset[0].to(device)
 

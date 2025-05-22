@@ -53,7 +53,7 @@ if device == 'cuda':
     torch.cuda.manual_seed(args.seed)
 
 name_data = args.dataset
-dataset = Planetoid(root= '../../data/' + name_data, name = name_data)
+dataset = Planetoid(root= './data/' + name_data, name = name_data)
 dataset.transform = T.NormalizeFeatures()
 
 print(f"Number of Classes in {name_data}:", dataset.num_classes)
