@@ -74,3 +74,21 @@ python train.py --model GCN --dataset pubmed --coverage 0.8
 - `--lamda`: Lambda parameter (default: 32)
 - `--alphaloss`: Alpha for loss weighting (default: 0.5)
 - All base parameters apply
+
+## Acknowledgments
+
+This code is inspired by and buildt upon GAT implementation in PyTorch: [pyGAT](https://github.com/Diego999/pyGAT)
+
+## Citation
+
+```bibtex
+@article{kuchipudi2025node,
+title={Node Classification With Reject Option},
+author={Uday Bhaskar Kuchipudi and Jayadratha Gayen and Charu Sharma and Naresh Manwani},
+journal={Transactions on Machine Learning Research},
+issn={2835-8856},
+year={2025},
+url={https://openreview.net/forum?id=4xXJDO8Bvu},
+note={}
+}
+```
