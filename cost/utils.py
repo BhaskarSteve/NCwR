@@ -1,7 +1,6 @@
 import numpy as np
 import scipy.sparse as sp
 import torch
-import random
 
 def encode_onehot(labels):
     # The classes must be sorted before encoding to enable static class encoding.

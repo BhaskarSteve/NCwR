@@ -1,19 +1,16 @@
-from __future__ import division
-from __future__ import print_function
-
-import os
-import glob
 import time
 import random
 import argparse
 import numpy as np
+
 import torch
 import torch.optim as optim
-from torch_geometric.datasets import Planetoid
 import torch_geometric.transforms as T
+from torch_geometric.datasets import Planetoid
+
+from loss import CwRLoss    
 from utils import acc_cov, cost_loss
 from models import GAT, GraphSAGE, GCN, GATv2
-from loss import CwRLoss    
 
 # Training settings
 parser = argparse.ArgumentParser()
@@ -139,17 +136,17 @@ for epoch in range(args.epochs):
     if bad_counter == args.patience:
         break
 
-    files = glob.glob('*.pkl')
-    for file in files:
-        epoch_nb = int(file.split('.')[0])
-        if epoch_nb < best_epoch:
-            os.remove(file)
+#     files = glob.glob('*.pkl')
+#     for file in files:
+#         epoch_nb = int(file.split('.')[0])
+#         if epoch_nb < best_epoch:
+#             os.remove(file)
 
-files = glob.glob('*.pkl')
-for file in files:
-    epoch_nb = int(file.split('.')[0])
-    if epoch_nb > best_epoch:
-        os.remove(file)
+# files = glob.glob('*.pkl')
+# for file in files:
+#     epoch_nb = int(file.split('.')[0])
+#     if epoch_nb > best_epoch:
+#         os.remove(file)
 
 print("Optimization Finished!")
 print("Total time elapsed: {:.4f}s".format(time.time() - t_total))

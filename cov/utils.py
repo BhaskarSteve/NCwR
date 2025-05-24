@@ -1,6 +1,7 @@
+import random
 import numpy as np
 import scipy.sparse as sp
-import random
+
 import torch
 import torch.nn as nn
 

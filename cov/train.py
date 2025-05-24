@@ -1,28 +1,15 @@
-from __future__ import division
-from __future__ import print_function
-
-import os
-import csv
-import glob
-import json
 import time
 import random
 import argparse
 import numpy as np
-import matplotlib.pyplot as plt
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
 import torch.optim as optim
-from torch.autograd import Variable
-from sklearn.manifold import TSNE
 
-from utils import load_data, accuracy, sel_loss, sel_accuracy, true_cov, find_tres
-from torch_geometric.data import Data
-from torch_geometric.datasets import Planetoid
-from torch_geometric.nn import models
 import torch_geometric.transforms as T
+from torch_geometric.datasets import Planetoid
+
 from models import GAT, GCN, GraphSAGE, GATv2
+from utils import accuracy, sel_loss, sel_accuracy, true_cov, find_tres
 
 # Training settings
 parser = argparse.ArgumentParser()
@@ -176,7 +163,3 @@ print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
 
 # Testing
 cov, acc = compute_test()
-
-with open(f'{args.dataset}.csv', mode='a') as file:
-    writer = csv.writer(file)
-    writer.writerow([args.dataset, args.model, args.layers, args.coverage, cov, acc])

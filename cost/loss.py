@@ -1,6 +1,4 @@
-import torch
 import torch.nn as nn
-import torch.nn.functional as F
 
 class CwRLoss(nn.Module):
     def __init__(self, c, num_classes):

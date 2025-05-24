@@ -1,22 +1,13 @@
-from __future__ import division
-from __future__ import print_function
-
-import os
-import glob
 import time
 import random
 import argparse
 import numpy as np
+
 import torch
-import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
-from torch.autograd import Variable
-
-from torch_geometric.data import Data
-from torch_geometric.datasets import Planetoid
-from torch_geometric.nn import models
 import torch_geometric.transforms as T
+from torch_geometric.datasets import Planetoid
 from models import GAT, GraphSAGE, GCN, GATv2
 
 # Training settings
